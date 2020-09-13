@@ -35,7 +35,7 @@ namespace Movie.Demo.Repository.Implimentation
             movieUrl += "?api_key=" + this._ApiKey + "&language=" + langCode + "&query=" + query;
             if (pageNumber.HasValue && pageNumber.Value > 0)
             {
-                movieUrl += "page=" + pageNumber;
+                movieUrl += "&page=" + pageNumber;
             }
 
             Uri movieUri = new Uri(movieUrl);
@@ -54,7 +54,7 @@ namespace Movie.Demo.Repository.Implimentation
 
             var result = response.Content.ReadAsStringAsync().Result;
 
-            return string.Empty;
+            return response.Content.ReadAsStringAsync().Result;
         }
     }
 }

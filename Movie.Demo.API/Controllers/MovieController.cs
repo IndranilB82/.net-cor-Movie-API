@@ -35,7 +35,7 @@ namespace Movie.Demo.API.Controllers
         }
 
         [HttpGet]
-        [Route("MovieList/{langCode}")]
+        [Route("movielist/{langCode}")]
         public IActionResult MovieList(string langCode)
         {
             if (string.IsNullOrEmpty(langCode))
@@ -64,7 +64,7 @@ namespace Movie.Demo.API.Controllers
         }
 
         [HttpGet]
-        [Route("SearchMovies/{langCode}/{query}/{page?}")]
+        [Route("searchmovies/{langCode}/{query}/{page?}")]
         public IActionResult SearchMovies(string langCode, string query, int? page)
         {
             if (string.IsNullOrEmpty(langCode) || string.IsNullOrEmpty(query))
@@ -92,7 +92,7 @@ namespace Movie.Demo.API.Controllers
         }
 
         [HttpGet]
-        [Route("MovieDetails/{langCode}/{id}")]
+        [Route("moviedetails/{langCode}/{id}")]
         public IActionResult MovieDetails(string langCode, int id)
         {
             if (string.IsNullOrEmpty(langCode) || id == 0)
