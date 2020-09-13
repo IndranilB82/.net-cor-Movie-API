@@ -16,12 +16,12 @@ namespace Movie.Demo.Repository.Implimentation
         {
             this._httpClient = httpClient;
             this._IConfiguration = iConfiguration;
-            this._ApiKey = this._IConfiguration.GetSection(URLSection.Uri.ToString()).GetSection(URLSection.ApiKey.ToString()).Value;
+            this._ApiKey = this._IConfiguration.GetSection(URL.Uri.ToString()).GetSection(URL.ApiKey.ToString()).Value;
         }
         public string GetMovies(string langCode)
         {
 
-            string movieUrl = this._IConfiguration.GetSection(URLSection.Uri.ToString()).GetSection(URLSection.MovieUrl.ToString()).Value;
+            string movieUrl = this._IConfiguration.GetSection(URL.Uri.ToString()).GetSection(URL.MovieUrl.ToString()).Value;
 
             Uri movieUri = new Uri(movieUrl + "popular?api_key=" + this._ApiKey + "&language=" + langCode);
 
@@ -31,7 +31,7 @@ namespace Movie.Demo.Repository.Implimentation
         }
         public string SearchMovies(string langCode, string query, int? pageNumber)
         {
-            string movieUrl = this._IConfiguration.GetSection(URLSection.Uri.ToString()).GetSection(URLSection.SearchUrl.ToString()).Value;
+            string movieUrl = this._IConfiguration.GetSection(URL.Uri.ToString()).GetSection(URL.SearchUrl.ToString()).Value;
             movieUrl += "?api_key=" + this._ApiKey + "&language=" + langCode + "&query=" + query;
             if (pageNumber.HasValue && pageNumber.Value > 0)
             {
@@ -46,7 +46,7 @@ namespace Movie.Demo.Repository.Implimentation
         }
         public string GetMovieDetails(string langCode, int id)
         {
-            string movieUrl = this._IConfiguration.GetSection(URLSection.Uri.ToString()).GetSection(URLSection.MovieUrl.ToString()).Value;
+            string movieUrl = this._IConfiguration.GetSection(URL.Uri.ToString()).GetSection(URL.MovieUrl.ToString()).Value;
 
             Uri movieUri = new Uri(movieUrl + id + "?api_key=" + this._ApiKey + "&language=" + langCode);
 

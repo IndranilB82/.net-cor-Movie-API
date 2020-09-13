@@ -1,10 +1,25 @@
 ﻿namespace Movie.Demo.Utility.Enumeration
 {
-    public enum URLSection
+    public enum URL
     {
         Uri,
         MovieUrl,
         SearchUrl,
-        ApiKey
+        ApiKey,
+        SeqUrl
+    }
+
+    public enum Layer
+    {
+        MovieController,
+        ExceptionMiddleware
+    }
+
+    public enum Method
+    {
+        MovieList,
+        SearchMovies,
+        MovieDetails,
+        ExceptionHandler
     }
 }
