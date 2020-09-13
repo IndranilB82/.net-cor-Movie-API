@@ -7,3 +7,5 @@
 /Movie.Demo.Repository/bin
 /Movie.Demo.Api/obj
 /Movie.Demo.Api/bin
+/Movie.Demo.Test/obj
+/Movie.Demo.Test/bin

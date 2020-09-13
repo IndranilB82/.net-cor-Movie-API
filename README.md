@@ -12,6 +12,7 @@ A simple api consuming [Movie API] which has the following criteria:
 * you can search for any movie
 * you can see the details of the selected movie
 * This project also configured swagger and serilog for application log
+* use FluentAssertions and Moq for unit testing
 
 ### Prerequisites
 
